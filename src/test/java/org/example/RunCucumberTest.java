@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "classpath:features")
 public class RunCucumberTest {
-    //Закрываем браузер, когда тесты отработали
+
     @AfterClass
     public static void finalizeResources() {
         StepDefinitions.webDriver.close();
