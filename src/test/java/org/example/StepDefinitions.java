@@ -37,15 +37,15 @@ public class StepDefinitions {
         WebElement webElement = webDriver.findElement(By.xpath("//*[@id=\"form456746058\"]/div[2]/div[3]/div/div[1]/input[1]"));
         webElement.sendKeys(phone);
     }
-    @And("corrected")
-    public void corrected() {
+    @And("check is corrected")
+    public void check_is_corrected() {
         webDriver.findElement(By.xpath("//*[@id=\"form456746058\"]/div[2]/div[5]/button")).click();
-        webDriver.findElement(By.xpath("//*[@id=\"tildaformsuccesspopup\"]/div/div"));
+        webDriver.findElement(By.xpath("//*[@id=\"tildaformsuccesspopup\"]/div/div")); //поиск элемента с сообщением о том что данные приняты и нам перезвонят
     }
-    @And("incorrect")
-    public void incorrect() {
+    @And("check is incorrect")
+    public void check_is_incorrect() {
         webDriver.findElement(By.xpath("//*[@id=\"form456746058\"]/div[2]/div[5]/button")).click();
-        webDriver.findElement(By.xpath("//*[@id=\"tilda-popup-for-error\"]"));
+        webDriver.findElement(By.xpath("//*[@id=\"tilda-popup-for-error\"]")); //поиск элемента на странице, с просьбой о корректного указания имени, email, телефона, означающий, что система не приняла некорректные данные в поля ввода
     }
 
 }
